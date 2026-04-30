@@ -1,7 +1,7 @@
 # Boarding House Canvassing System
 ### MSU-IIT — BSIT 1st Year Project
 
-A java app where students can browse and canvass boarding houses near the university. Landlords can list and manage their properties. Everything runs locally — no internet needed.
+A Java desktop app where students can browse and canvass boarding houses near the university. Landlords can list and manage their properties. Everything runs locally — no internet needed.
 
 ---
 
@@ -24,50 +24,48 @@ A java app where students can browse and canvass boarding houses near the univer
 
 ## How to run it
 
-Running the JAR (if provided)**
-1. Extract the zip file — keep all folders together, do not move files around
-2. Double-click `BoardingHouseApp.jar`, or open a terminal inside the folder and run:
+### Steps
+1. Clone the repository
 ```
-java -jar BoardingHouseApp.jar
+git clone https://github.com/your-username/BHSystem.git
 ```
+2. Open the project in IntelliJ — **File → Open** and select the `BHSystem` folder
+3. Make sure the `resources/` folder is marked as a Resources Root — right-click it → **Mark Directory as → Resources Root**
+4. Run `App.java` inside `src/bhsystem/project/frontend/`
 
-> The `data/` and `photos/` folders are created automatically the first time you use the app.
-
----
-
-## Important notes
-
-- **Keep the folder together.** Photos are stored locally inside the `photos/` folder. If you move just the JAR without the rest of the folder, photos will not load.
-- **Don't forget your PIN.** Each listing has its own 4-digit PIN. If you forget it, you'll need to manually open `data/boardinghouses.csv` and find the `ownerPin` column to recover it.
-- **Don't delete the data, photo, and PNG folder.** All listings, reviews, and favorites are stored in the `data/` folder. Deleting it resets everything.
+> The `data/` and `photos/` folders are created automatically the first time you run the app.
 
 ---
 
 ## Project structure
 
 ```
-src/bhsystem/project/
-├── backend/          ← data models and file management (don't touch unless fixing a bug)
-│   ├── BoardingHouse.java
-│   ├── RoomType.java
-│   ├── Review.java
-│   ├── DataManager.java
-│   ├── PhotoManager.java
-│   └── SlugGenerator.java
-└── frontend/         ← all screens and UI
-    ├── App.java                  ← entry point, run this
-    ├── AppColors.java            ← color palette
-    ├── ModeSelectionScreen.java
-    ├── MainListingWallScreen.java
-    ├── FullDetailsScreen.java
-    ├── LandlordHomeScreen.java
-    ├── CreateListingScreen.java
-    ├── ManageListingScreen.java
-    ├── PhotoManagerDialog.java
-    ├── PhotoViewerDialog.java
-    ├── AddReviewDialog.java
-    ├── PinEntryDialog.java
-    └── EditRoomTypeDialog.java
+BHSystem/
+├── resources/
+│   └── png_icons/            ← all icon PNGs used throughout the app
+├── src/bhsystem/project/
+│   ├── backend/              ← data models and file management
+│   │   ├── BoardingHouse.java
+│   │   ├── RoomType.java
+│   │   ├── Review.java
+│   │   ├── DataManager.java
+│   │   ├── PhotoManager.java
+│   │   └── SlugGenerator.java
+│   └── frontend/             ← all screens and UI
+│       ├── App.java                  ← entry point, run this
+│       ├── AppColors.java            ← color palette
+│       ├── PNGLoader.java            ← utility for loading and scaling PNG icons
+│       ├── ModeSelectionScreen.java
+│       ├── MainListingWallScreen.java
+│       ├── FullDetailsScreen.java
+│       ├── LandlordHomeScreen.java
+│       ├── CreateListingScreen.java
+│       ├── ManageListingScreen.java
+│       ├── PhotoManagerDialog.java
+│       ├── PhotoViewerDialog.java
+│       ├── AddReviewDialog.java
+│       ├── PinEntryDialog.java
+│       └── EditRoomTypeDialog.java
 ```
 
 ---
@@ -87,7 +85,7 @@ src/bhsystem/project/
 
 - No internet or sync — everything is local to the machine running the app
 - No PIN recovery — forgotten PINs must be manually fixed in `data/boardinghouses.csv`
-- App must always be run from inside its extracted folder so file paths work correctly
+- App must always be run from inside its folder so relative file paths work correctly
 
 ---
 
