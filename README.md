@@ -1,5 +1,4 @@
-# Boarding House Canvassing System
-### MSU-IIT — BSIT 1st Year Project
+# Boarding House Canvassing System 
 
 A Java desktop app where students can browse and canvass boarding houses near the university. Landlords can list and manage their properties. Everything runs locally — no internet needed.
 
@@ -88,5 +87,3 @@ BHSystem/
 - App must always be run from inside its folder so relative file paths work correctly
 
 ---
-
-*Developed by BSIT 1st Year students — MSU-IIT*
